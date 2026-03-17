@@ -51,7 +51,7 @@ class IAGraph():
 
             space_used = neighbours_array[:count]
 
-            print(node, "<->" ,space_used)
+            print(node.name, "<->" ,space_used)
             current = current.next
 
         print("None")
