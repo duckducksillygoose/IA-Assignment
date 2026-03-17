@@ -10,11 +10,17 @@ class LinkedList():
         current_node = self.head
         while current_node.next:
             current_node = current_node.next
-        current_node.next = newNode
+        current_node.next = newNode #shuffles node to back
 
 
 class ListNode:
     def __init__(self, data):
         self.data = data
         self.next = None
+
+
+
+test = LinkedList()
+test.InsertNode("3")
+test.InsertNode("F")
 
