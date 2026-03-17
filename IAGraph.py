@@ -9,8 +9,8 @@ class IAGraph():
         self.nodelist = LinkedList()
 
     
-    def add_node(self, name):
-        node = GraphNode(name)
+    def add_node(self, name, h):
+        node = GraphNode(name,h )
         self.nodelist.InsertNode(node)
 
 
@@ -54,12 +54,12 @@ class GraphEdge():
 
 
 testgraph = IAGraph(8)
-testgraph.add_node("2")
-testgraph.add_node("4")
-testgraph.add_node("3")
-testgraph.add_node("1")
-testgraph.add_node("8")
-testgraph.add_node("9")
+testgraph.add_node("2", 400)
+testgraph.add_node("4", 420)
+testgraph.add_node("3", 462)
+testgraph.add_node("1", 826)
+testgraph.add_node("8", 321)
+testgraph.add_node("9", 847)
 print(testgraph.nodelist)
 
 
