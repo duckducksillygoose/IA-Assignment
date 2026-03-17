@@ -20,7 +20,5 @@ class ListNode:
 
 
 
-test = LinkedList()
-test.InsertNode("3")
-test.InsertNode("F")
+
 
