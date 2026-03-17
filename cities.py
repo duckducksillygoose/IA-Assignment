@@ -16,4 +16,8 @@ testgraph.add_node("Alice Springs", 1500)
 testgraph.add_node("Townsville", 280)
 testgraph.add_node("Cairns", 0)
 
+
+
+testgraph.add_road("Perth", "Adelaide", 2700)
+
 testgraph.display_as_list()

@@ -17,11 +17,11 @@ class IAGraph():
     def add_road(self, city1, city2, weight):
         city1 = city2 = None #have to initialise to get rid of datatype as None has no datatype
 
-        current = self.nodelist.headN #searches through nodelist
+        current = self.nodelist.head #searches through nodelist
         while current:
-            if current.data.data == city1:
+            if current.data == city1:
                 city1 = current.data
-            if current.data.data == city1:
+            if current.data == city1:
                 
                 city2 = current.data
             current = current.next
