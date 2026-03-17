@@ -8,24 +8,16 @@ class IAGraph():
         self.size = size
         self.nodelist = LinkedList()
 
-class GraphNode():
-    def __init__(self, name, h):
-        self.name = name
-        self.neighbours = LinkedList()
-        self.h = h #heuristic cost from cell to target
-        self.g = float("inf") #cost from start to this cell
-        self.f = float("inf") #total
-
-
+    
     def add_node(self, name):
         node = GraphNode(name)
         self.nodelist.InsertNode(node)
 
 
     def add_road(self, city1, city2, weight):
-        city1 = city2 = None
+        city1 = city2 = None #have to initialise to get rid of datatype as None has no datatype
 
-        current = self.nodelist.head
+        current = self.nodelist.headN #searches through nodelist
         while current:
             if current.data.data == city1:
                 city1 = current.data
@@ -42,7 +34,17 @@ class GraphNode():
         city1.neighbours.InsertNode(GraphEdge(city2, weight)) #bidirectional
         city2.neighbours.InsertNode(GraphEdge(city1, weight))
 
-  
+ 
+
+class GraphNode():
+    def __init__(self, name, h):
+        self.name = name
+        self.neighbours = LinkedList()
+        self.h = h #heuristic cost from cell to target
+        self.g = float("inf") #cost from start to this cell
+        self.f = float("inf") #total
+
+ 
 
 
 class GraphEdge():
@@ -50,6 +52,15 @@ class GraphEdge():
         self.n= n
         self.weight = weight
 
+
+testgraph = IAGraph(8)
+testgraph.add_node("2")
+testgraph.add_node("4")
+testgraph.add_node("3")
+testgraph.add_node("1")
+testgraph.add_node("8")
+testgraph.add_node("9")
+print(testgraph.nodelist)
 
 
 
