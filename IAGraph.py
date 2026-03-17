@@ -15,24 +15,26 @@ class IAGraph():
 
 
     def add_road(self, city1, city2, weight):
-        city1 = city2 = None #have to initialise to get rid of datatype as None has no datatype
+        node1 = node2= None #have to initialise to get rid of datatype as None has no datatype
 
-        current = self.nodelist.headN #searches through nodelist
+        node1 = node2 = None
+
+        current = self.nodelist.head
+
         while current:
-            if current.data.data == city1:
-                city1 = current.data
-            if current.data.data == city1:
-                
-                city2 = current.data
+            if current.data.name == city1:
+                node1 = current.data
+
+            if current.data.name == city2:
+                node2 = current.data
+
             current = current.next
 
-        if city1 is None or city2 is None:
-            raise Exception("One or both nodes not found") #check against misspellings
-        
+        if node2 is None or node1 is None:
+            raise Exception("Nodes not found")
 
-
-        city1.neighbours.InsertNode(GraphEdge(city2, weight)) #bidirectional
-        city2.neighbours.InsertNode(GraphEdge(city1, weight))
+        node1.neighbours.InsertNode(GraphEdge(node2, weight)) #bidirectional
+        node2.neighbours.InsertNode(GraphEdge(node1, weight))
 
     def display_as_list(self):
         current = self.nodelist.head
@@ -45,7 +47,7 @@ class IAGraph():
             neighbour_current = node.neighbours.head
             while neighbour_current and count < len(neighbours_array):
                 edge = neighbour_current.data     # GraphEdge object
-                neighbours_array[count] = (edge.n.data, edge.weight)
+                neighbours_array[count] = (edge.n.name, edge.weight)
                 count += 1
                 neighbour_current = neighbour_current.next
 
