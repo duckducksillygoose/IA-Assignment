@@ -1,6 +1,6 @@
 from LinkedListsetup import LinkedList, ListNode
 
-
+import numpy as np
 
 
 class IAGraph():
@@ -34,6 +34,30 @@ class IAGraph():
         city1.neighbours.InsertNode(GraphEdge(city2, weight)) #bidirectional
         city2.neighbours.InsertNode(GraphEdge(city1, weight))
 
+    def display_as_list(self):
+        current = self.nodelist.head
+        while current:
+            node = current.data
+
+            neighbours_array = np.empty(10, dtype=object)
+            count = 0
+
+            neighbour_current = node.neighbours.head
+            while neighbour_current and count < len(neighbours_array):
+                edge = neighbour_current.data     # GraphEdge object
+                neighbours_array[count] = (edge.n.data, edge.weight)
+                count += 1
+                neighbour_current = neighbour_current.next
+
+            space_used = neighbours_array[:count]
+
+            print(node.data, "<->" ,space_used)
+            current = current.next
+
+        print("None")
+
+
+
  
 
 class GraphNode():
@@ -60,7 +84,7 @@ testgraph.add_node("3", 462)
 testgraph.add_node("1", 826)
 testgraph.add_node("8", 321)
 testgraph.add_node("9", 847)
-print(testgraph.nodelist)
+
 
 
 
