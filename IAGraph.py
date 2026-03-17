@@ -51,7 +51,7 @@ class IAGraph():
 
             space_used = neighbours_array[:count]
 
-            print(node.data, "<->" ,space_used)
+            print(node, "<->" ,space_used)
             current = current.next
 
         print("None")
@@ -84,6 +84,8 @@ testgraph.add_node("3", 462)
 testgraph.add_node("1", 826)
 testgraph.add_node("8", 321)
 testgraph.add_node("9", 847)
+
+testgraph.display_as_list()
 
 
 
