@@ -22,11 +22,11 @@ def astar(graph, start_city, goal_city):
         print("Nodes found")
 
 
-    start_city.g = 0
-    start_city.f = start_node.h
+    start_node.g = 0
+    start_node.f = start_node.h
     open_set = [start_city]
 
 
-    print(start_city.g)
+    print(start_node.g)
     
 
