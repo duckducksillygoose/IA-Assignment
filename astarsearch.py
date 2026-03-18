@@ -4,6 +4,7 @@
 from IAGraph import *
 from LinkedListsetup import *
 
+
 def astar(graph, start_city, goal_city):
     # Find cairns and perth
     current = graph.nodelist.head
@@ -19,5 +20,13 @@ def astar(graph, start_city, goal_city):
         raise Exception("Start or goal node not found!")
     else:
         print("Nodes found")
+
+
+    start_city.g = 0
+    start_city.f = start_node.h
+    open_set = [start_city]
+
+
+    print(start_city.g)
     
 
