@@ -28,5 +28,11 @@ def astar(graph, start_city, goal_city):
 
 
     print(start_node.g)
+    print(start_node.h)
+
+    #explore neighbour sets, aka one with a road relationship
+    #pick neighbour city with the smallest h
+    #move to open set
+    #repeat until u reach target city, then reverse path
     
 
