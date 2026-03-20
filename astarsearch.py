@@ -6,7 +6,7 @@ from LinkedListsetup import *
 
 
 def find_lowest_f(open_set):
-    low_f = open_set[0]
+    lowest = open_set[0]
 
     for object in open_set:
         if object.f <=lowest.f:
