@@ -5,6 +5,16 @@ from IAGraph import *
 from LinkedListsetup import *
 
 
+def find_lowest_f(open_set):
+    low_f = open_set[0]
+
+    for object in open_set:
+        if object.f <=lowest.f:
+            lowest = object
+
+        return lowest
+
+
 def astar(graph, start_city, goal_city):
     # Find cairns and perth
     current = graph.nodelist.head
@@ -25,6 +35,7 @@ def astar(graph, start_city, goal_city):
     start_node.g = 0
     start_node.f = start_node.h
     open_set = [start_city]
+    closed_set = []
 
 
     print(start_node.g)
