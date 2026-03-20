@@ -42,16 +42,8 @@ def astar(graph, start_city, goal_city):
         current_node = find_lowest_f(open_set)
         print(current_node.f)
 
+        for neighbour, cost in current_node.neighbours:
+            if neighbour in closed_set:
+                continue #if the neighbour has not so far been explored
 
-
-
-
-    print(start_node.g)
-    print(start_node.h)
-
-    #explore neighbour sets, aka one with a road relationship
-    #pick neighbour city with the smallest h
-    #move to open set
-    #repeat until u reach target city, then reverse path
-    
-
+            
