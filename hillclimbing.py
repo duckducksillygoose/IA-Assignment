@@ -4,7 +4,7 @@ from cities import *
 
 #hill climbing algorithm
 
-def hill_climb(graph, start_city, goal_city):
+def hillclimb(graph, start_city, goal_city):
         
     # Find cairns and perth
     current = graph.nodelist.head
