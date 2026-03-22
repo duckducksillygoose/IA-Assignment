@@ -52,31 +52,39 @@ def astar(graph, start_city, goal_city):
     open_set = [start_node]
     closed_set = []
 
-    while open_set: #while there are nodes
-        current_node = find_lowest_f(open_set)
-        print(current_node.f)
+    while open_set:
+    current_node = find_lowest_f(open_set)
+    print(current_node.f)
 
-        if current_node == goal_node:
-            return reconstruct_path
-        
-        open_set.remove(current_node)
-        closed_set.append(current_node)
+    if current_node == goal_node:
+        return reconstruct_path(goal_node)
 
-        for neighbour, cost in current_node.neighbours:
-            if neighbour in closed_set:
-                continue #if the neighbour has not so far been explored
+    open_set.remove(current_node)
+    closed_set.append(current_node)
 
-            possible_g = current_node.g + cost
+    neighbour_node = current_node.neighbours.head
 
-            if neighbour not in open_set:
-                open_set.append(neighbour)#add the neighbour to the set to be considered
+    while neighbour_node:
+        neighbour, cost = neighbour_node.data
 
-            elif possible_g >=neighbour.g:
-                continue
+        if neighbour in closed_set:
+            neighbour_node = neighbour_node.next
+            continue
 
-            neighbour.g = possible_g
-            neighbour.f = neighbour.g + neighbour.h
+        possible_g = current_node.g + cost
 
+        if neighbour not in open_set:
+            open_set.append(neighbour)
+        elif possible_g >= neighbour.g:
+            neighbour_node = neighbour_node.next
+            continue
+
+        neighbour.parent = current_node
+        neighbour.g = possible_g
+        neighbour.f = neighbour.g + neighbour.h
+
+        neighbour_node = neighbour_node.next
+            
 
 
             
