@@ -1,4 +1,5 @@
 from LinkedListsetup import *
+from IAGraph import *
 from cities import *
 
 #hill climbing algorithm
@@ -39,3 +40,18 @@ def hill_climb(graph, start_city, goal_city):
 
         while neighbour_current:
             neighbour = neighbour_current.data.n #GraphEdge object
+
+            if neighbour.h < best_h:
+                best_h = neighbour.h #replace with new best
+                best_neighbour = neighbour #label as best
+
+            neighbour_current = neighbour_current.next #update
+
+        if best_neighbour == None:
+            print("Reached local optimum, cannot go any further")
+            return path #reaches the local optimum
+        
+
+        current_node = best_neighbour
+
+
