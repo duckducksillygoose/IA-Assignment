@@ -43,6 +43,7 @@ def hillclimb(graph, start_city, goal_city):
         while neighbour_current:
             neighbour = neighbour_current.data.n #GraphEdge object
 
+
             if neighbour.h < best_h:
                 best_h = neighbour.h #replace with new best
                 best_neighbour = neighbour #label as best
