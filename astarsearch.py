@@ -56,8 +56,27 @@ def astar(graph, start_city, goal_city):
         current_node = find_lowest_f(open_set)
         print(current_node.f)
 
+        if current_node == goal_node:
+            return reconstruct_path
+        
+        open_set.remove(current_node)
+        closed_set.append(current_node)
+
         for neighbour, cost in current_node.neighbours:
             if neighbour in closed_set:
                 continue #if the neighbour has not so far been explored
+
+            possible_g = current_node.g + cost
+
+            if neighbour not in open_set:
+                open_set.append(neighbour)#add the neighbour to the set to be considered
+
+            elif possible_g >=neighbour.g:
+                continue
+
+            neighbour.g = possible_g
+            neighbour.f = neighbour.g + neighbour.h
+
+
 
             
