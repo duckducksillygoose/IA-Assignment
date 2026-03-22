@@ -1,5 +1,6 @@
 from IAGraph import *
 from LinkedListsetup import *
+from astarsearch import *
 
 testgraph = IAGraph(8)
 #Initialising nodes
@@ -39,3 +40,5 @@ testgraph.add_road("Brisbane", "Townsville", 1350)
 testgraph.add_road("Townsville", "Cairns", 350)
 
 testgraph.display_as_list()
+
+astar(testgraph, "Perth", "Cairns")

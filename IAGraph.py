@@ -66,6 +66,7 @@ class GraphNode():
     def __init__(self, name, h):
         self.name = name
         self.neighbours = LinkedList()
+        self.parent = None
         self.h = h #heuristic cost from cell to target
         self.g = float("inf") #cost from start to this cell
         self.f = float("inf") #total
