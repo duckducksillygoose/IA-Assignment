@@ -54,7 +54,8 @@ def astar(graph, start_city, goal_city):
 
     while open_set:
         current_node = find_lowest_f(open_set)
-        print(current_node.f)
+        print("Expanding", current_node.name, "f=",current_node.f, "g=", current_node.g, "h=", current_node.h)
+
 
         if current_node == goal_node:
             return reconstruct_path(goal_node)
