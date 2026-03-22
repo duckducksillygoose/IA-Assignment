@@ -12,7 +12,7 @@ def find_lowest_f(open_set): #should take node objects
         if object.f <=lowest.f:
             lowest = object
 
-        return lowest
+    return lowest
     
 
 
@@ -53,38 +53,40 @@ def astar(graph, start_city, goal_city):
     closed_set = []
 
     while open_set:
-    current_node = find_lowest_f(open_set)
-    print(current_node.f)
+        current_node = find_lowest_f(open_set)
+        print(current_node.f)
 
-    if current_node == goal_node:
-        return reconstruct_path(goal_node)
+        if current_node == goal_node:
+            return reconstruct_path(goal_node)
 
-    open_set.remove(current_node)
-    closed_set.append(current_node)
+        open_set.remove(current_node)
+        closed_set.append(current_node)
 
-    neighbour_node = current_node.neighbours.head
+        neighbour_node = current_node.neighbours.head
 
-    while neighbour_node:
-        neighbour, cost = neighbour_node.data
+        while neighbour_node:
+            edge = neighbour_node.data
+            neighbour = edge.n
+            cost = edge.weight
 
-        if neighbour in closed_set:
+            if neighbour in closed_set:
+                neighbour_node = neighbour_node.next
+                continue
+
+            possible_g = current_node.g + cost
+
+            if neighbour not in open_set:
+                open_set.append(neighbour)
+            elif possible_g >= neighbour.g:
+                neighbour_node = neighbour_node.next
+                continue
+
+            neighbour.parent = current_node
+            neighbour.g = possible_g
+            neighbour.f = neighbour.g + neighbour.h
+
             neighbour_node = neighbour_node.next
-            continue
-
-        possible_g = current_node.g + cost
-
-        if neighbour not in open_set:
-            open_set.append(neighbour)
-        elif possible_g >= neighbour.g:
-            neighbour_node = neighbour_node.next
-            continue
-
-        neighbour.parent = current_node
-        neighbour.g = possible_g
-        neighbour.f = neighbour.g + neighbour.h
-
-        neighbour_node = neighbour_node.next
-            
+                
 
 
             
