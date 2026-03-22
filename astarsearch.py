@@ -13,6 +13,20 @@ def find_lowest_f(open_set): #should take node objects
             lowest = object
 
         return lowest
+    
+
+
+def reconstruct_path(goal_node):
+    path = []
+    current = goal_node
+
+    while current:
+        path.append(current.name)
+        current = current.parent
+
+    return list(reversed(path))
+
+
 
 
 def astar(graph, start_city, goal_city):
