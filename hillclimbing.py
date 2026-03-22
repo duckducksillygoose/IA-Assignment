@@ -31,7 +31,9 @@ def hillclimb(graph, start_city, goal_city):
 
         if current_node.name == goal_node.name:
             print("Goal city has been reached")
-            return path
+            print("Final Path:", " -> ".join(path))
+
+
         
         best_neighbour = None
         best_h = current_node.h
@@ -49,6 +51,7 @@ def hillclimb(graph, start_city, goal_city):
 
         if best_neighbour == None:
             print("Reached local optimum, cannot go any further")
+            print("Final Path:", " -> ".join(path))
             return path #reaches the local optimum
         
 
