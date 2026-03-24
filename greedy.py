@@ -57,12 +57,12 @@ def greedy_BFS(graph, start_city, goal_city): #copied from astar
 
         neighbour_node = current.neighbours.head
         while neighbour_node:
-            neighbour = neighbour_node.data
+            neighbour = neighbour_node.data.n
             if neighbour not in closed_set:
                 if neighbour not in open_set:
                     open_set.append(neighbour)
 
-                neighbour_node = neighbour_node.next #iterate
+            neighbour_node = neighbour_node.next #iterate
 
 
 
