@@ -32,6 +32,7 @@ def greedy_BFS(graph, start_city, end_city): #copied from astar
 
     current = graph.nodelist.head
     open_set = [start_node]
+    closed_set=[]
 
     visited = []
 
@@ -43,5 +44,7 @@ def greedy_BFS(graph, start_city, end_city): #copied from astar
             if open_set[i].h < open_set[lowest_index].h:
                 lowest_index = i
                 i += 1 #locates the node with the lowest_h
+
+
 
     
