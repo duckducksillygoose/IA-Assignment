@@ -35,7 +35,7 @@ def greedy_BFS(graph, start_city, end_city): #copied from astar
     closed_set=[]
     path=[]
 
-    visited = []
+
 
     while open_set:
             # find node with smallest h manually
@@ -47,11 +47,18 @@ def greedy_BFS(graph, start_city, end_city): #copied from astar
             i += 1
 
             current = open_set.pop(lowest_index) #gets the node with the lowest index
-            closed_set.append(current) #visited
+            path.append(current) #becomes part of the path
 
             if current == goal_node:
                 print("Goal found")
-                return 
+                return path
+            
+            closed_set.append(current)
+
+            for neighbour in current.neighbors:
+                if neighbour not in closed_set and neighbour not in open_set:
+                    open_set.append(neighbour)
+
 
 
 
