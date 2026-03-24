@@ -13,7 +13,7 @@ from astarsearch import reconstruct_path
 
 
 
-def greedy_BFS(graph, start_city, end_city): #copied from astar
+def greedy_BFS(graph, start_city, goal_city): #copied from astar
         # Find cairns and perth
     current = graph.nodelist.head
     start_node = goal_node = None
