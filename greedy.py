@@ -33,7 +33,7 @@ def greedy_BFS(graph, start_city, goal_city): #copied from astar
     current = graph.nodelist.head
     open_set = [start_node]
     closed_set=[]
-    path=[]
+    exploration=[]
 
 
 
@@ -51,7 +51,8 @@ def greedy_BFS(graph, start_city, goal_city): #copied from astar
 
         if current == goal_node:
                 print("Goal found")
-                return path
+                print("Exploration path", " -> ".join(node.name for node in exploration))
+                return 
             
         closed_set.append(current)
 
