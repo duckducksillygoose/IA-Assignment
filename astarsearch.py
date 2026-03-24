@@ -23,8 +23,9 @@ def reconstruct_path(goal_node):
     while current:
         path.append(current.name)
         current = current.parent
+    path.reverse()
 
-    return list(reversed(path))
+    return path
 
 
 
@@ -58,7 +59,11 @@ def astar(graph, start_city, goal_city):
 
 
         if current_node == goal_node:
-            return reconstruct_path(goal_node)
+            path= reconstruct_path(goal_node)
+
+                
+            print("Final path:", " -> ".join(path))
+            return path 
 
         open_set.remove(current_node)
         closed_set.append(current_node)
