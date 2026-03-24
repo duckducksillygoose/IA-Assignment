@@ -47,12 +47,12 @@ def greedy_BFS(graph, start_city, goal_city): #copied from astar
             i += 1
 
         current = open_set.pop(lowest_index) #gets the node with the lowest index
-        path.append(current) #becomes part of the path
+        exploration.append(current) #becomes part of the path
 
         if current == goal_node:
                 print("Goal found")
                 print("Exploration path", " -> ".join(node.name for node in exploration))
-                return 
+                return
             
         closed_set.append(current)
 
