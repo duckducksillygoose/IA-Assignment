@@ -2,7 +2,7 @@ from LinkedListsetup import LinkedList, ListNode
 
 import numpy as np
 import networkx as nx
-
+import matplotlib.pyplot as plt
 
 class IAGraph():
     def __init__(self, size):
@@ -61,7 +61,7 @@ class IAGraph():
 
 
 
-    def convert_to_nx():
+    def convert_to_nx(self):
         G = nx.Graph()
 
         current = self.nodelist.head
