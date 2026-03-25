@@ -10,7 +10,7 @@ from helperfunctions import *
 
 def astar(graph, start_city, goal_city):
 
-    
+    expansion_order = []
     # Find cairns and perth
     current = graph.nodelist.head
     start_node = goal_node = None
@@ -33,7 +33,9 @@ def astar(graph, start_city, goal_city):
 
     while open_set:
         current_node = find_lowest_f(open_set)
-        print("\nCurrent:", current_node.name, "| h =", current_node.h)
+        expansion_order.append(current_node.name)
+
+        print(f"\nCurrent: {current_node.name} | g={current_node.g}, h={current_node.h}, f={current_node.f}")
 
 
         if current_node == goal_node:
@@ -54,7 +56,11 @@ def astar(graph, start_city, goal_city):
             neighbour = edge.n
             cost = edge.weight
 
+            
+
             if neighbour in closed_set:
+
+                print(neighbour.name, "already explored, so skipped")
                 neighbour_node = neighbour_node.next
                 continue
 
@@ -69,7 +75,7 @@ def astar(graph, start_city, goal_city):
             neighbour.parent = current_node
             neighbour.g = possible_g
             neighbour.f = neighbour.g + neighbour.h
-
+            print(f"   {neighbour.name} | g={neighbour.g}, h={neighbour.h}, f={neighbour.f}")
             neighbour_node = neighbour_node.next
                 
 
