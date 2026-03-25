@@ -64,6 +64,21 @@ class IAGraph():
     def convert_to_nx():
         G = nx.Graph()
 
+        current = self.nodelist.head
+        while current:
+            node = current.data
+            G.add_node(node.name)  # Add the node to NetworkX graph
+
+            neighbour_current = node.neighbours.head
+            while neighbour_current:
+                edge = neighbour_current.data
+                G.add_edge(node.name, edge.n.name, weight=edge.weight)
+                neighbour_current = neighbour_current.next
+
+            current = current.next
+
+        return G
+
 
  
 
