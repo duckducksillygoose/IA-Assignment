@@ -9,6 +9,10 @@ import time
 nx_graph =testgraph.convert_to_nx()
 print(type(nx_graph))
 
+
+nx.draw(nx_graph, with_labels=True, node_size=3000, node_color='skyblue', font_size=12, font_weight='bold', edge_color='gray')
+plt.show()
+
 #testgraph.display_as_list()
 
 #time.sleep(2)
