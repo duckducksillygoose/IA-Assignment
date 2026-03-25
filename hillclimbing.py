@@ -1,6 +1,7 @@
 from LinkedListsetup import *
 from IAGraph import *
 from cities import *
+from helperfunctions import *
 
 #hill climbing algorithm
 
@@ -55,6 +56,8 @@ def hillclimb(graph, start_city, goal_city):
 
         if best_neighbour == None:
             print("Reached local optimum, cannot go any further")
+        
+
             print("Final Path:", " -> ".join(path))
             return path #reaches the local optimum
         print("Moving to:", best_neighbour.name)
