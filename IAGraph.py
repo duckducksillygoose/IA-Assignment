@@ -1,6 +1,7 @@
 from LinkedListsetup import LinkedList, ListNode
 
 import numpy as np
+import networkx as nx
 
 
 class IAGraph():
@@ -58,6 +59,10 @@ class IAGraph():
 
         print("All towns listed")
 
+
+
+    def convert_to_nx():
+        G = nx.Graph()
 
 
  
