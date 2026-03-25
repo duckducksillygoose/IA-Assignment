@@ -33,7 +33,6 @@ def hillclimb(graph, start_city, goal_city):
 
         if current_node.name == goal_node.name:
             print("Goal city has been reached")
-            path = reconstruct_path()
             print("Final Path:", " -> ".join(path))
             return path
 
