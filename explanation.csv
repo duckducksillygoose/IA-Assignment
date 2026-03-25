@@ -1,0 +1,10 @@
+Questions to answer:
+
+
+Which algorithm found the optimal path?
+
+Whether Greedy Best first search found the same path as a star
+
+whether hill climbing got stuck at a local optimum/dead end
+
+Which algorithm is more suitable for this problem?
