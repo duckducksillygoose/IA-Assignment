@@ -38,6 +38,7 @@ def astar(graph, start_city, goal_city):
 
         if current_node == goal_node:
             path= reconstruct_path(goal_node)
+            cost = total_cost(goal_node)
 
                 
             print("Final path:", " -> ".join(path))
