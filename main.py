@@ -2,6 +2,7 @@ from hillclimbing import *
 from cities import *
 from astarsearch import *
 from greedy import *
+from helperfunctions import *
 
 import time
 

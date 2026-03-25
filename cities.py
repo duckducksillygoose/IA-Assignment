@@ -1,6 +1,6 @@
 from IAGraph import *
 from LinkedListsetup import *
-from astarsearch import *
+from helperfunctions import *
 
 
 testgraph = IAGraph(8)
