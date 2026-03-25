@@ -35,6 +35,8 @@ def greedy_BFS(graph, start_city, goal_city): #copied from astar
     closed_set=[]
     exploration=[]
 
+    start_node.parent = None
+
 
 
     while open_set:
@@ -46,12 +48,13 @@ def greedy_BFS(graph, start_city, goal_city): #copied from astar
                 lowest_index = i
             i += 1
 
-        current = open_set.pop(lowest_index) #gets the node with the lowest index
+        current = open_set.pop(lowest_index)
+        print("Expanding:", current.name, "| h =", current.h) #gets the node with the lowest index
         exploration.append(current) #becomes part of the path
 
         if current == goal_node:
-                print("Goal found")
-                print("Exploration path", " -> ".join(node.name for node in exploration))
+                path = reconstruct_path(goal_node)
+                print("Final path", " -> ".join(path))
                 return
             
         closed_set.append(current)
@@ -62,6 +65,7 @@ def greedy_BFS(graph, start_city, goal_city): #copied from astar
             if neighbour not in closed_set:
                 if neighbour not in open_set:
                     open_set.append(neighbour)
+                    neighbour.parent = current
 
             neighbour_node = neighbour_node.next #iterate
 
