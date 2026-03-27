@@ -8,11 +8,11 @@ import time
 
 nx_graph =testgraph.convert_to_nx()
 print(type(nx_graph))
+
+
+
+nx.draw(nx_graph, with_labels=True, node_size=1000, node_color='skyblue', font_size=12, font_weight='bold', edge_color='blue')
 plt.show()
-
-
-#nx.draw(nx_graph, with_labels=True, node_size=1000, node_color='skyblue', font_size=12, font_weight='bold', edge_color='blue')
-
 #plt.show()
 
 #testgraph.display_as_list()
