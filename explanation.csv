@@ -1,0 +1,8 @@
+
+Both A* search and Greedy Best First search found the optimal path with a total distance of 6750km.
+Hill climbing got stuck because it does not backtrack, and so in this case got stuck at Alice Springs. 
+In terms of which algorithm was more suitable for this problem, I would say A* search. This is the best algorithm
+when it comes to finding the optimal solution. Greedy BFS may be slightly faster, but it does not guarantee the best solution
+because it only considers the heuristic h(n), while A* considers both the heuristic and the actual cost.
+Hill climbing can often get stuck because a path can look promising locally, but not be the best solution globally.
+Hill climbing also does not have a backtracking method.
