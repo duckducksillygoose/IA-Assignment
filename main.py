@@ -10,9 +10,9 @@ nx_graph =testgraph.convert_to_nx()
 print(type(nx_graph))
 
 
-nx.draw(nx_graph, with_labels=True, node_size=1000, node_color='skyblue', font_size=12, font_weight='bold', edge_color='blue')
+#nx.draw(nx_graph, with_labels=True, node_size=1000, node_color='skyblue', font_size=12, font_weight='bold', edge_color='blue')
 
-plt.show()
+#plt.show()
 
 #testgraph.display_as_list()
 
@@ -23,7 +23,7 @@ plt.show()
 #hillclimb(testgraph, "Perth", "Cairns")
 #time.sleep(2)
 
-##astar(testgraph, "Perth", "Cairns")
+astar(testgraph, "Perth", "Cairns")
 
 #print("____GREEDY BEST FIRST SEARCH RESULTS______")
 #greedy_BFS(testgraph, "Perth", "Cairns")
