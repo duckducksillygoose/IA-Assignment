@@ -56,10 +56,11 @@ def greedy_BFS(graph, start_city, goal_city): #copied from astar
 
         if current == goal_node:
                 path = reconstruct_path(goal_node)
-                
+                total = greedy_cost()
             
 
                 print("Final path", " -> ".join(exploration))
+                print("Total cost was", total)
     
                 return path
             

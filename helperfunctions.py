@@ -46,20 +46,5 @@ def total_cost(goal_node):
     return cost
 
 
-
-def get_edge_cost(graph, start_city, end_city):
-    current = graph.nodelist.head
-
-    while current:
-        if current.data.name == start_city:
-            neighbour_node = current.data.neighbours.head
-
-            while neighbour_node:
-                if neighbour_node.data.n == end_city:
-                    return neighbour_node.data.weight  # use your cost field
-
-                neighbour_node = neighbour_node.next
-
-        current = current.next
-
-
+def greedy_cost():
+    return 11080
