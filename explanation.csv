@@ -1,5 +1,5 @@
 
-Both A* search and Greedy Best First search found the optimal path with a total distance of 6750km.
+A star search found the best cost at 6750, while Greedy BFS was much larger as 11080.
 Hill climbing got stuck because it does not backtrack, and so in this case got stuck at Alice Springs. 
 In terms of which algorithm was more suitable for this problem, I would say A* search. This is the best algorithm
 when it comes to finding the optimal solution. Greedy BFS may be slightly faster, but it does not guarantee the best solution
