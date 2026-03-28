@@ -13,7 +13,6 @@ from helperfunctions import *
 #different to hill climbing that f=h, also uses manhattan distance so have to code that
 
 
-
 def greedy_BFS(graph, start_city, goal_city): #copied from astar
         # Find cairns and perth
     current = graph.nodelist.head
@@ -37,6 +36,8 @@ def greedy_BFS(graph, start_city, goal_city): #copied from astar
     exploration=[]
 
     start_node.parent = None
+    start_node.g = 0
+
 
 
 
@@ -55,8 +56,12 @@ def greedy_BFS(graph, start_city, goal_city): #copied from astar
 
         if current == goal_node:
                 path = reconstruct_path(goal_node)
-                cost = total_cost(goal_node)
+                total = greedy_cost()
+            
+
                 print("Final path", " -> ".join(exploration))
+                print("Total cost was", total)
+    
                 return path
             
         closed_set.append(current)
@@ -66,6 +71,7 @@ def greedy_BFS(graph, start_city, goal_city): #copied from astar
             neighbour = neighbour_node.data.n
             if neighbour not in closed_set:
                 if neighbour not in open_set:
+                    neighbour.g = current.g + neighbour_node.data.weight
                     open_set.append(neighbour)
                     neighbour.parent = current
 
