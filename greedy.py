@@ -40,6 +40,7 @@ def greedy_BFS(graph, start_city, goal_city): #copied from astar
 
 
 
+
     while open_set:
             # find node with smallest h manually
         lowest_index = 0
@@ -55,7 +56,7 @@ def greedy_BFS(graph, start_city, goal_city): #copied from astar
 
         if current == goal_node:
                 path = reconstruct_path(goal_node)
-                cost = total_cost(goal_node)
+
                 print("Final path", " -> ".join(exploration))
                 return path
             
